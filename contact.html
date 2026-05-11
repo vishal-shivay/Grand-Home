@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Grand Home Construction LTD</title>
+  <meta name="description" content="Get in touch with Grand Home Construction LTD for a free quote on any construction project in London. Email us or follow on Instagram."/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .contact-page-wrap { background: var(--off-white); }
+    .service-select-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px; margin-bottom: 20px;
+    }
+    .service-checkbox { display: none; }
+    .service-checkbox-label {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px;
+      border: 1.5px solid #e0e4ec;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem; color: var(--navy);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .service-checkbox-label i { color: var(--gold); font-size: 0.9rem; }
+    .service-checkbox:checked + .service-checkbox-label {
+      border-color: var(--gold);
+      background: rgba(201,147,58,0.06);
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .map-embed {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 24px;
+      border: 1px solid rgba(201,147,58,0.15);
+      background: var(--navy);
+      min-height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px; color: rgba(255,255,255,0.5);
+      text-align: center; padding: 32px;
+    }
+    .map-embed i { font-size: 2.5rem; color: var(--gold); }
+    .map-embed p { font-size: 0.9rem; margin: 0; line-height: 1.6; }
+    .contact-social-row {
+      display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;
+    }
+    .contact-social-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .csb-email {
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid var(--navy);
+    }
+    .csb-email:hover {
+      background: transparent; color: var(--navy);
+      transform: translateY(-3px);
+    }
+    .csb-insta {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: var(--white);
+      border: 2px solid transparent;
+    }
+    .csb-insta:hover {
+      opacity: 0.9;
+      transform: translateY(-3px);
+      color: var(--white);
+    }
+    .faq-item {
+      border: 1px solid rgba(201,147,58,0.12);
+      border-radius: 8px; margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 18px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+    .faq-q:hover { background: rgba(201,147,58,0.04); }
+    .faq-q i { color: var(--gold); transition: transform 0.3s ease; }
+    .faq-q.open i { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 24px 18px;
+      font-size: 0.9rem; color: #667; line-height: 1.7;
+      background: var(--white);
+    }
+    .faq-a.show { display: block; }
+  </style>
+</head>
+<body class="contact-page-wrap">
+
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-brand">
+      <span class="l-grand">GRAND</span><span class="l-home">HOME</span>
+      <span class="l-const">CONSTRUCTION</span>
+    </div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="index.html">
+      <div class="nav-logo-wrap">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg" width="56">
+            <polyline points="5,35 40,5 75,35" stroke="#C9933A" stroke-width="6" fill="none" stroke-linejoin="round"/>
+            <rect x="55" y="12" width="7" height="18" fill="#C9933A"/>
+            <rect x="22" y="15" width="6" height="6" fill="#C9933A" opacity="0.7"/>
+            <text x="8" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="#1B2A4A">G</text>
+            <text x="42" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="#1B2A4A">H</text>
+            <line x1="36" y1="44" x2="36" y2="66" stroke="#C9933A" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="nav-logo-text">
+          <span class="nlt-grand">GRAND HOME</span>
+          <span class="nlt-const">— CONSTRUCTION —</span>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="tog-line"></span><span class="tog-line"></span><span class="tog-line"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-gold" href="contact.html">Get Free Quote</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="page-hero-label">Get In Touch</div>
+      <h1 class="page-hero-title">Contact <span class="text-gold">Us</span></h1>
+      <div class="breadcrumb-bar">
+        <a href="index.html">Home</a><span>/</span><span class="bc-current">Contact</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- FORM -->
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="contact-form-wrap">
+          <div class="section-label" style="justify-content:flex-start;">Send Us a Message</div>
+          <h2 class="section-title mb-4">Get Your <span class="text-gold">Free Quote</span></h2>
+
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-control" placeholder="John" required/>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-control" placeholder="Smith" required/>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-control" placeholder="john@example.com" required/>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="+44 7xxx xxxxxx"/>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Service Required *</label>
+                <div class="service-select-grid">
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s1" name="service" value="New Build"/>
+                    <label class="service-checkbox-label" for="s1"><i class="fas fa-home"></i> New Build</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s2" name="service" value="Renovation"/>
+                    <label class="service-checkbox-label" for="s2"><i class="fas fa-tools"></i> Renovation</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s3" name="service" value="Electrical"/>
+                    <label class="service-checkbox-label" for="s3"><i class="fas fa-bolt"></i> Electrical</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s4" name="service" value="Plumbing"/>
+                    <label class="service-checkbox-label" for="s4"><i class="fas fa-faucet"></i> Plumbing</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s5" name="service" value="Painting"/>
+                    <label class="service-checkbox-label" for="s5"><i class="fas fa-paint-roller"></i> Painting</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s6" name="service" value="Bathroom"/>
+                    <label class="service-checkbox-label" for="s6"><i class="fas fa-bath"></i> Bathroom</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s7" name="service" value="Kitchen"/>
+                    <label class="service-checkbox-label" for="s7"><i class="fas fa-utensils"></i> Kitchen</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s8" name="service" value="Loft Conversion"/>
+                    <label class="service-checkbox-label" for="s8"><i class="fas fa-layer-group"></i> Loft</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s9" name="service" value="Extension"/>
+                    <label class="service-checkbox-label" for="s9"><i class="fas fa-expand-arrows-alt"></i> Extension</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s10" name="service" value="Roofing"/>
+                    <label class="service-checkbox-label" for="s10"><i class="fas fa-house-damage"></i> Roofing</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" class="service-checkbox" id="s11" name="service" value="Landscaping"/>
+                    <label class="service-checkbox-label" for="s11"><i class="fas fa-seedling"></i> Landscaping</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Approximate Budget</label>
+                <select class="form-select">
+                  <option value="">Select budget range</option>
+                  <option>Under £5,000</option>
+                  <option>£5,000 – £15,000</option>
+                  <option>£15,000 – £30,000</option>
+                  <option>£30,000 – £60,000</option>
+                  <option>£60,000 – £100,000</option>
+                  <option>£100,000+</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Preferred Start Date</label>
+                <input type="date" class="form-control"/>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Tell Us About Your Project *</label>
+                <textarea class="form-control" rows="5" placeholder="Describe your project, property type, and any specific requirements..." required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-gold btn-lg w-100">
+                  <i class="fas fa-paper-plane me-2"></i>Send My Free Quote Request
+                </button>
+                <p style="font-size:0.8rem;color:#8a9ab5;text-align:center;margin-top:12px;">
+                  <i class="fas fa-lock me-1"></i>Your information is 100% confidential. We respond within 24 hours.
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <!-- Quick contact buttons -->
+          <div class="contact-social-row">
+            <a href="mailto:Grandhomeconstructionltd@gmail.com" class="contact-social-btn csb-email">
+              <i class="fas fa-envelope"></i> Email Us Directly
+            </a>
+            <a href="https://www.instagram.com/ghconst.2024" target="_blank" class="contact-social-btn csb-insta">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="contact-info-card">
+
+          <!-- Logo 3 — icon only, displayed prominently on contact card -->
+          <div style="text-align:center;margin-bottom:28px;">
+            <svg viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg" width="72">
+              <polyline points="5,35 40,5 75,35" stroke="#C9933A" stroke-width="6" fill="none" stroke-linejoin="round"/>
+              <rect x="55" y="12" width="7" height="18" fill="#C9933A"/>
+              <rect x="22" y="15" width="6" height="6" fill="#C9933A" opacity="0.7"/>
+              <text x="8" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="white">G</text>
+              <text x="42" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="white">H</text>
+              <line x1="36" y1="44" x2="36" y2="66" stroke="#C9933A" stroke-width="3"/>
+            </svg>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:white;letter-spacing:0.06em;margin-top:8px;">GRAND HOME</div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;color:#C9933A;letter-spacing:0.3em;">— CONSTRUCTION LTD —</div>
+          </div>
+
+          <div class="cic-item">
+            <div class="cic-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="cic-label">Email Us</div>
+              <div class="cic-val">
+                <a href="mailto:Grandhomeconstructionltd@gmail.com">Grandhomeconstructionltd@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cic-item">
+            <div class="cic-icon"><i class="fab fa-instagram"></i></div>
+            <div>
+              <div class="cic-label">Instagram</div>
+              <div class="cic-val">
+                <a href="https://www.instagram.com/ghconst.2024" target="_blank">@ghconst.2024</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cic-item">
+            <div class="cic-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="cic-label">Location</div>
+              <div class="cic-val">London, United Kingdom</div>
+            </div>
+          </div>
+
+          <div class="cic-item">
+            <div class="cic-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="cic-label">Response Time</div>
+              <div class="cic-val">Within 24 hours</div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-embed">
+            <i class="fas fa-map-marked-alt"></i>
+            <p><strong style="color:white;">Grand Home Construction LTD</strong><br/>
+            London, United Kingdom<br/>
+            <small>Serving all London boroughs &amp; surrounding areas</small></p>
+            <a href="https://maps.google.com/?q=London,UK" target="_blank" class="btn btn-gold btn-sm mt-2">
+              <i class="fas fa-directions me-1"></i> Open in Maps
+            </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+            <div style="text-align:center;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid rgba(201,147,58,0.15);flex:1;">
+              <i class="fas fa-shield-alt" style="color:#C9933A;font-size:1.3rem;display:block;margin-bottom:6px;"></i>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase;">Fully Insured</div>
+            </div>
+            <div style="text-align:center;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid rgba(201,147,58,0.15);flex:1;">
+              <i class="fas fa-award" style="color:#C9933A;font-size:1.3rem;display:block;margin-bottom:6px;"></i>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase;">Certified</div>
+            </div>
+            <div style="text-align:center;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;border:1px solid rgba(201,147,58,0.15);flex:1;">
+              <i class="fas fa-star" style="color:#C9933A;font-size:1.3rem;display:block;margin-bottom:6px;"></i>
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.1em;text-transform:uppercase;">5-Star Rated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--off-white);padding-top:0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently Asked <span class="text-gold">Questions</span></h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How do I get a quote? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">Simply fill in the contact form above or email us directly at Grandhomeconstructionltd@gmail.com. We'll get back to you within 24 hours to arrange a free, no-obligation site visit and consultation.</div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How long do projects typically take? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">Project timelines vary depending on scope. A bathroom renovation typically takes 1–2 weeks, a kitchen 2–3 weeks, a loft conversion 6–10 weeks, and a new build 6–12 months. We provide a detailed schedule in your quote.</div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Are you fully insured and certified? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">Yes, absolutely. Grand Home Construction LTD is fully insured with comprehensive public liability coverage. All our electricians and gas engineers hold the relevant professional certifications required by UK law.</div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you handle planning permission? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">Yes. For projects that require planning permission — such as extensions, loft conversions, and new builds — we manage the full planning application process on your behalf, liaising with the local authority throughout.</div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What areas do you cover? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">We are based in London and serve all London boroughs as well as surrounding areas including Essex, Surrey, Hertfordshire, and Kent. Contact us to confirm coverage for your specific location.</div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What payment methods do you accept? <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-a">We accept bank transfer, credit/debit card, and staged payment plans for larger projects. We never ask for full payment upfront — a typical structure is a deposit to commence, with staged payments throughout, and final balance on completion.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner section-pad">
+  <div class="container text-center">
+    <div class="cta-inner" data-aos="zoom-in">
+      <h2 class="cta-title">Still Have Questions?<br/><span class="text-gold">We're Here to Help.</span></h2>
+      <p class="cta-sub">Reach out via email or Instagram — our team responds quickly.</p>
+      <div class="cta-actions">
+        <a href="mailto:Grandhomeconstructionltd@gmail.com" class="btn btn-gold btn-lg">
+          <i class="fas fa-envelope me-2"></i>Email Us Now
+        </a>
+        <a href="https://www.instagram.com/ghconst.2024" target="_blank" class="btn btn-outline-gold btn-lg">
+          <i class="fab fa-instagram me-2"></i>Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5 py-5">
+      <div class="col-lg-4">
+        <div class="footer-logo">
+          <svg viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg" width="48">
+            <polyline points="5,35 40,5 75,35" stroke="#C9933A" stroke-width="6" fill="none" stroke-linejoin="round"/>
+            <rect x="55" y="12" width="7" height="18" fill="#C9933A"/>
+            <text x="8" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="white">G</text>
+            <text x="42" y="62" font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="28" fill="white">H</text>
+            <line x1="36" y1="44" x2="36" y2="66" stroke="#C9933A" stroke-width="3"/>
+          </svg>
+          <div class="footer-logo-text">
+            <span>GRAND HOME</span><span class="text-gold">— CONSTRUCTION —</span>
+          </div>
+        </div>
+        <p class="footer-desc">London's premium construction partner. Building trust, quality, and lasting value in every project.</p>
+          <div class="social-links">
+          <!-- Instagram Button -->
+<a href="https://www.instagram.com/ghconst.2024" target="_blank" class="social-btn">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<!-- Email Button -->
+<a href="mailto:Grandhomeconstructionltd@gmail.com" class="social-btn">
+  <i class="fas fa-envelope"></i>
+</a>
+
+<!-- Call Button -->
+<a href="tel:+447405086133" class="social-btn">
+  <i class="fas fa-phone"></i>
+</a>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/447405086133" target="_blank" class="social-btn">
+  <i class="fab fa-whatsapp"></i>
+</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h5 class="footer-heading">Our Services</h5>
+        <ul class="footer-links">
+          <li><a href="services.html">New Build</a></li>
+          <li><a href="services.html">Renovation</a></li>
+          <li><a href="services.html">Loft Conversion</a></li>
+          <li><a href="services.html">Home Extension</a></li>
+          <li><a href="services.html">Kitchen &amp; Bathroom</a></li>
+          <li><a href="services.html">Roofing &amp; Landscaping</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-heading">Contact Us</h5>
+        <div class="footer-contact">
+          <div class="fc-item"><i class="fas fa-envelope text-gold"></i><a href="mailto:Grandhomeconstructionltd@gmail.com">Grandhomeconstructionltd@gmail.com</a></div>
+          <div class="fc-item"><i class="fab fa-instagram text-gold"></i><a href="https://www.instagram.com/ghconst.2024" target="_blank">@ghconst.2024</a></div>
+          <div class="fc-item"><i class="fas fa-map-marker-alt text-gold"></i><span>London, United Kingdom</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Grand Home Construction LTD. All rights reserved.</p>
+      <p>Made By <span class="text-gold">♥</span> RankUpDigitaly</p>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-cta">
+  <a href="mailto:Grandhomeconstructionltd@gmail.com" class="float-btn">
+    <i class="fas fa-envelope"></i><span>Email Us</span>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const isOpen = answer.classList.contains('show');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('show'));
+  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+  if (!isOpen) {
+    answer.classList.add('show');
+    el.classList.add('open');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<div class="side-action-bar" id="sideActionBar">
+ 
+  <!-- Call -->
+  <a href="tel:+44XXXXXXXXXX" class="sab-btn sab-btn--call" aria-label="Call Us">
+    <span class="sab-icon"><i class="fas fa-phone"></i></span>
+    <span class="sab-label">Call Us</span>
+  </a>
+ 
+  <!-- WhatsApp -->
+  <a href="https://wa.me/44XXXXXXXXXX" target="_blank" rel="noopener noreferrer"
+     class="sab-btn sab-btn--whatsapp" aria-label="WhatsApp">
+    <span class="sab-icon"><i class="fab fa-whatsapp"></i></span>
+    <span class="sab-label">WhatsApp</span>
+  </a>
+ 
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/ghconst.2024" target="_blank" rel="noopener noreferrer"
+     class="sab-btn sab-btn--insta" aria-label="Instagram">
+    <span class="sab-icon"><i class="fab fa-instagram"></i></span>
+    <span class="sab-label">Instagram</span>
+  </a>
+ 
+  <!-- Divider -->
+  <div class="sab-divider" aria-hidden="true"></div>
+ 
+  <!-- Scroll to Top -->
+  <button class="sab-btn sab-btn--top" id="sabTopBtn" aria-label="Back to Top">
+    <span class="sab-icon"><i class="fas fa-chevron-up"></i></span>
+    <span class="sab-label">Top</span>
+  </button>
+ 
+</div>
+<script>(function () {
+  const sabTopBtn = document.getElementById('sabTopBtn');
+  if (!sabTopBtn) return;
+ 
+  /* Show / hide scroll-to-top button */
+  const handleScroll = () => {
+    if (window.scrollY > 400) {
+      sabTopBtn.classList.add('visible');
+    } else {
+      sabTopBtn.classList.remove('visible');
+    }
+  };
+ 
+  window.addEventListener('scroll', handleScroll, { passive: true });
+ 
+  /* Smooth scroll to top on click */
+  sabTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+ </script>
+</body>
+</html>
